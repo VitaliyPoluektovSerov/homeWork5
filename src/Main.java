@@ -16,20 +16,20 @@ public class Main {
         if (clientDeviceYear < 2015) {
             switch (clientOS) {
                 case 0:
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-                break;
+                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                    break;
                 case 1:
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                break;
+                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                    break;
             }
         } else {
             switch (clientOS) {
                 case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
+                    System.out.println("Установите версию приложения для iOS по ссылке");
+                    break;
                 case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
+                    System.out.println("Установите версию приложения для Android по ссылке");
+                    break;
             }
         }
 
@@ -60,8 +60,10 @@ public class Main {
         }
         if (deliveryDays > 0) {
             System.out.println("Потребуется дней: " + deliveryDays);
-        } else
+        }
+        if (deliveryDays == 0) {
             System.out.println("Не доставляем в Ваш район");
+        }
 
         // Задача 5
         byte monthNumber = 12;
