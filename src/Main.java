@@ -3,31 +3,34 @@
 public class Main {
     public static void main(String[] args) {
         //Задача 1
-        byte clientOS = 1; // 0 - iOS 1 - Android
-        switch (clientOS) {
-            case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
-            default:
-                System.out.println("Не распознаная версия ОС");
+        byte clientOS = 0; // 0 - iOS 1 - Android предполагаем что значения могум быть только 0 или 1
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
 
+
         //Задача 2
-        short clientDeviceYear = 2014; //год выпуска телефона
-        if (clientDeviceYear < 2015 && clientOS == 0) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        }
-        if (clientDeviceYear >= 2015 && clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        }
-        if (clientDeviceYear < 2015 && clientOS == 1) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        }
-        if (clientDeviceYear >= 2015 && clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
+        short clientDeviceYear = 2018; //год выпуска телефона
+        if (clientDeviceYear < 2015) {
+            switch (clientOS) {
+                case 0:
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                break;
+                case 1:
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                break;
+            }
+        } else {
+            switch (clientOS) {
+                case 0:
+                System.out.println("Установите версию приложения для iOS по ссылке");
+                break;
+                case 1:
+                System.out.println("Установите версию приложения для Android по ссылке");
+                break;
+            }
         }
 
         //Задача 3
@@ -57,14 +60,12 @@ public class Main {
         }
         if (deliveryDays > 0) {
             System.out.println("Потребуется дней: " + deliveryDays);
-        } else {
+        } else
             System.out.println("Не доставляем в Ваш район");
 
-        }
-
         // Задача 5
-        byte mounthNumber = 12;
-        switch (mounthNumber) {
+        byte monthNumber = 12;
+        switch (monthNumber) {
             case 12:
             case 1:
             case 2:
