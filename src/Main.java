@@ -12,25 +12,18 @@ public class Main {
 
 
         //Задача 2
-        short clientDeviceYear = 2018; //год выпуска телефона
-        if (clientDeviceYear < 2015) {
-            switch (clientOS) {
-                case 0:
-                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-                    break;
-                case 1:
-                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                    break;
-            }
-        } else {
-            switch (clientOS) {
-                case 0:
-                    System.out.println("Установите версию приложения для iOS по ссылке");
-                    break;
-                case 1:
-                    System.out.println("Установите версию приложения для Android по ссылке");
-                    break;
-            }
+        short clientDeviceYear = 2014; //год выпуска телефона
+        if (clientDeviceYear < 2015 && clientOS == 0) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        }
+        if (clientDeviceYear >= 2015 && clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+        if (clientDeviceYear < 2015 && clientOS == 1) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        }
+        if (clientDeviceYear >= 2015 && clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
 
         //Задача 3
